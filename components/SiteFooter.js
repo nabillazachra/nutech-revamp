@@ -1,5 +1,8 @@
 import Link from 'next/link';
 import Brand from './Brand';
+import { getContactContent } from '../lib/content';
+
+const { emails, phones, offices } = getContactContent();
 
 export default function SiteFooter(){
   return (
@@ -23,11 +26,11 @@ export default function SiteFooter(){
         </div>
         <div>
           <strong>Management Office</strong>
-          <span>Gedung Nutech</span>
-          <span>Jl. Buncit Raya Kav. 99</span>
-          <span>Pejaten Barat, Jakarta Selatan 12510</span>
-          <a href="tel:+622127808111">+62 21 2780 8111</a>
-          <a href="mailto:info@nutech-integrasi.com">info@nutech-integrasi.com</a>
+          <span>{offices.management.name}</span>
+          <span>{offices.management.address.split(',')[0]}</span>
+          <span>{offices.management.address.split(',').slice(1).join(',').trim()}</span>
+          <a href={'tel:'+phones.management}>{phones.management}</a>
+          <a href={'mailto:'+emails.info}>{emails.info}</a>
         </div>
       </div>
       <div className="container footerBottom">© 2026 PT Nutech Integrasi — Website revamp concept</div>
