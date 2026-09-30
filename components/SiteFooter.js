@@ -12,7 +12,7 @@ export default function SiteFooter(){
         <div>
           <strong>Explore</strong>
           <Link href="/solutions">Solutions</Link>
-          <Link href="/#experience">Experience</Link>
+          <Link href="/experience">Experience</Link>
           <Link href="/company">Company</Link>
         </div>
         <div>
