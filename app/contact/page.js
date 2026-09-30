@@ -1,11 +1,14 @@
 import SiteHeader from '../../components/SiteHeader';
 import SiteFooter from '../../components/SiteFooter';
 import { Icon } from '../../components/Icons';
+import { getContactContent } from '../../lib/content';
 
 export const metadata = {
   title: 'Contact | Nutech Integrasi',
   description: 'Contact PT Nutech Integrasi for system integration, transportation, payment, security and maintenance solutions.',
 };
+
+const { emails, phones, offices } = getContactContent();
 
 export default function ContactPage(){
   return <main>
@@ -19,29 +22,29 @@ export default function ContactPage(){
 
     <section className="section">
       <div className="container contactGrid contactGridFour">
-        <a className="contactCard" href="mailto:info@nutech-integrasi.com">
+        <a className="contactCard" href={'mailto:'+emails.info}>
           <Icon name="mail" size={28}/>
           <small>Email</small>
-          <h3>info@nutech-integrasi.com</h3>
+          <h3>{emails.info}</h3>
           <span>Corporate & solution enquiries</span>
         </a>
-        <a className="contactCard" href="tel:+622127808111">
+        <a className="contactCard" href={'tel:'+phones.management}>
           <Icon name="integration" size={28}/>
           <small>Management Office</small>
-          <h3>+62 21 2780 8111</h3>
+          <h3>{phones.management}</h3>
           <span>Gedung Nutech · Buncit Raya</span>
         </a>
         <div className="contactCard">
           <Icon name="pin" size={28}/>
           <small>Management Office</small>
-          <h3>Jl. Buncit Raya Kav. 99</h3>
-          <span>Pejaten Barat, Pasar Minggu, Jakarta Selatan 12510</span>
+          <h3>{offices.management.address.split(',')[0]}</h3>
+          <span>{offices.management.address.split(',').slice(1).join(',').trim()}</span>
         </div>
         <div className="contactCard">
           <Icon name="pin" size={28}/>
           <small>Operational & Warehouse</small>
-          <h3>Jl. Tanjung Barat No. 17</h3>
-          <span>Pasar Minggu, Jakarta Selatan 12510 · +62 21 780 3827</span>
+          <h3>{offices.warehouse.address.split(',')[0]}</h3>
+          <span>{offices.warehouse.address.split(',').slice(1).join(',').trim()} · {phones.warehouse}</span>
         </div>
       </div>
     </section>
