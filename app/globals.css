@@ -180,3 +180,43 @@ footer{margin-top:0}
 .notFoundInner{max-width:760px}
 .notFound h1{font-size:clamp(48px,7vw,88px);line-height:.96;letter-spacing:-.055em;margin:16px 0 24px}
 .notFound p{max-width:560px;color:#6b7176;font-size:16px;line-height:1.7;margin-bottom:30px}
+
+.featuredProductGrid{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid #d9dad6;border-left:1px solid #d9dad6}
+.featuredProduct{display:grid;grid-template-columns:42px 1fr auto;gap:18px;align-items:start;padding:26px;border-right:1px solid #d9dad6;border-bottom:1px solid #d9dad6;background:#fff;transition:.2s ease}
+.featuredProduct:hover{background:#fbfbfa;transform:translateY(-1px)}
+.featuredProduct>span{font-size:10px;color:#9ca0a4;padding-top:4px}
+.featuredProduct h3{font-size:20px;letter-spacing:-.02em;margin:0 0 7px}
+.featuredProduct p{font-size:13px;line-height:1.6;color:#747a7f;margin:0}
+.featuredProduct>svg{color:var(--orange)}
+.geospatialSection{background:#1a1e22;color:#fff}
+.geospatialGrid{display:grid;grid-template-columns:1fr 1fr;gap:90px;align-items:start}
+.geospatialGrid h2{font-size:clamp(42px,5vw,68px);line-height:.98;letter-spacing:-.05em;margin:14px 0 24px}
+.geospatialGrid>div:first-child>p{color:#aeb4b9;line-height:1.7;max-width:560px}
+.lightTextLink{color:#fff;padding:0;margin-top:20px}
+.geospatialList{border-top:1px solid #34393f}
+.geospatialList>div{display:grid;grid-template-columns:42px 1fr;gap:20px;padding:18px 0;border-bottom:1px solid #34393f}
+.geospatialList span{font-size:10px;color:#6f777e}
+.geospatialList p{margin:0;color:#d3d7da;line-height:1.55}
+.contactGridFour{grid-template-columns:repeat(2,1fr)}
+.gcgComplaint{padding:86px 0}
+.complaintLinks{display:flex;flex-direction:column;gap:12px}
+.complaintLinks a{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:18px 0;border-bottom:1px solid #383d42;color:#fff;font-size:14px}
+.jobsDetailed article{grid-template-columns:52px 1fr auto}
+.jobsDetailed ul{margin:14px 0 0;padding-left:18px;color:#70767b}
+.jobsDetailed li{font-size:13px;line-height:1.55;margin:5px 0}
+.applicationNote{margin-top:34px;padding:26px 28px;border:1px solid #d8dad6;background:#fff;display:grid;grid-template-columns:180px 1fr;gap:28px}
+.applicationNote p{margin:0;color:#676d72;line-height:1.65}
+.applicationNote a{color:var(--orange);font-weight:700}
+.footerGridWide span{font-size:12px;line-height:1.55}
+@media(max-width:980px){
+  .featuredProductGrid,.geospatialGrid{grid-template-columns:1fr}
+  .contactGridFour{grid-template-columns:1fr 1fr}
+  .geospatialGrid{gap:46px}
+}
+@media(max-width:680px){
+  .featuredProductGrid,.contactGridFour{grid-template-columns:1fr}
+  .featuredProduct{grid-template-columns:32px 1fr auto}
+  .applicationNote{grid-template-columns:1fr;gap:12px}
+  .jobsDetailed article{grid-template-columns:34px 1fr}
+  .jobsDetailed article>a{grid-column:2}
+}
