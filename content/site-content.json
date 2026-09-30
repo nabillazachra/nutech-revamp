@@ -1,0 +1,321 @@
+{
+  "site": {
+    "established": "2006",
+    "group": "TelkomGroup",
+    "emails": {
+      "info": "info@nutech-integrasi.com",
+      "hr": "hrd@nutech-integrasi.com",
+      "wbs": "nutech.wbs@nutech-integrasi.com"
+    },
+    "phones": {
+      "management": "+622127808111",
+      "warehouse": "+62217803827",
+      "wbs": "+6281117003237"
+    },
+    "offices": {
+      "management": {
+        "label": "Management Office",
+        "name": "Gedung Nutech",
+        "address": "Jl. Buncit Raya Kav. 99, Pejaten Barat, Pasar Minggu, Jakarta Selatan 12510"
+      },
+      "warehouse": {
+        "label": "Operational & Warehouse",
+        "address": "Jl. Tanjung Barat No. 17, Pasar Minggu, Jakarta Selatan 12510"
+      }
+    }
+  },
+  "home": {
+    "solutions": [
+      {
+        "icon": "transit",
+        "title": "Intelligent Transportation",
+        "body": "AFC, queueing, toll, parking and transport operations."
+      },
+      {
+        "icon": "payment",
+        "title": "Electronic Payment",
+        "body": "Smartcard, e-money, gateway and settlement integration."
+      },
+      {
+        "icon": "shield",
+        "title": "Security & Telemetry",
+        "body": "Access control, CCTV, sensing and operational monitoring."
+      },
+      {
+        "icon": "banking",
+        "title": "Financial & Banking",
+        "body": "ATM, CRM, VTM, EDC and transaction-device integration."
+      }
+    ],
+    "capabilities": [
+      {
+        "icon": "integration",
+        "title": "System Integration",
+        "body": "Connect hardware, software, network and specialized devices into one accountable system."
+      },
+      {
+        "icon": "local",
+        "title": "Production & Local Content",
+        "body": "Support domestic engineering, production and customer-specific deployment needs."
+      },
+      {
+        "icon": "wrench",
+        "title": "Operation & Maintenance",
+        "body": "Preventive and corrective services designed around service continuity."
+      },
+      {
+        "icon": "repair",
+        "title": "Repair Facility",
+        "body": "Technical repair capability to improve turnaround and asset serviceability."
+      }
+    ],
+    "projects": [
+      {
+        "name": "MRT Jakarta",
+        "work": "EMV contactless payment",
+        "sector": "Urban rail"
+      },
+      {
+        "name": "KAI Commuter",
+        "work": "E-ticketing ecosystem",
+        "sector": "Commuter rail"
+      },
+      {
+        "name": "ASDP Indonesia Ferry",
+        "work": "Digital ticketing",
+        "sector": "Maritime"
+      },
+      {
+        "name": "Batam International Port",
+        "work": "Immigration autogate",
+        "sector": "Border security"
+      }
+    ],
+    "deploymentPhotos": [
+      {
+        "src": "https://www.nutech-integrasi.com/wp-content/uploads/2014/09/image-7-1024x469.jpg",
+        "title": "Electronic Parking Terminal",
+        "label": "Payment & Parking"
+      },
+      {
+        "src": "https://www.nutech-integrasi.com/wp-content/uploads/2014/09/image-56-1024x356.jpg",
+        "title": "Airport Bus Management System",
+        "label": "Operational Monitoring"
+      },
+      {
+        "src": "https://www.nutech-integrasi.com/wp-content/uploads/2014/08/image-8-1024x409.jpg",
+        "title": "LRT Sumsel AFC",
+        "label": "Automated Fare Collection"
+      }
+    ]
+  },
+  "solutions": {
+    "domains": [
+      {
+        "icon": "transit",
+        "title": "Intelligent Transportation System",
+        "description": "Integrated mobility systems spanning automated fare collection, reservation and queueing, toll collection, smart parking, fleet and supporting transport platforms.",
+        "items": [
+          "Railway / BRT / Seaport AFC",
+          "Reservation & Queueing",
+          "Electronic Toll Collection",
+          "Smart Parking & Fleet"
+        ]
+      },
+      {
+        "icon": "payment",
+        "title": "Electronic Payment Integration",
+        "description": "Integration across smartcard, e-money, EDC, internet payment and settlement layers for multi-channel transaction ecosystems.",
+        "items": [
+          "Smartcard Platform",
+          "E-money Integration",
+          "EDC Integration",
+          "Payment Gateway & Settlement"
+        ]
+      },
+      {
+        "icon": "shield",
+        "title": "Security, Sensory & Telemetry",
+        "description": "Connected physical security and sensing capabilities for transportation, smart buildings, public infrastructure and operational monitoring.",
+        "items": [
+          "Access Control & Surveillance",
+          "Biometric Solution",
+          "Early Warning System",
+          "Telemetry & Sensor Integration"
+        ]
+      },
+      {
+        "icon": "banking",
+        "title": "Financial & Banking Solution",
+        "description": "Device and software integration for transaction environments, supported by enterprise-grade banking hardware and integration services.",
+        "items": [
+          "ATM / CRM / VTM",
+          "EDC & Mobile POS",
+          "Intelligent Deposit Machine",
+          "OEM Cash & Coin Modules"
+        ]
+      }
+    ],
+    "featuredProducts": [
+      {
+        "name": "Ticket Vending Machine",
+        "description": "Fare media distribution and self-service ticketing",
+        "url": "https://www.nutech-integrasi.com/ticket-vending-machine/"
+      },
+      {
+        "name": "Electronic Gate System",
+        "description": "Controlled passenger access integrated with fare collection",
+        "url": "https://www.nutech-integrasi.com/electronic-gate-system/"
+      },
+      {
+        "name": "Point-of-Sales System",
+        "description": "Transaction interface for operational and payment environments",
+        "url": "https://www.nutech-integrasi.com/point-of-sales-system/"
+      },
+      {
+        "name": "On-Bus Validator",
+        "description": "QR and prepaid-card validation for bus operations",
+        "url": "https://www.nutech-integrasi.com/on-bus-validator/"
+      },
+      {
+        "name": "Smart Card Management System",
+        "description": "Smart-card lifecycle and operational management",
+        "url": "https://www.nutech-integrasi.com/smart-card-management-system/"
+      },
+      {
+        "name": "FENITA Platform",
+        "description": "Fleet Management in Transportation platform",
+        "url": "https://www.nutech-integrasi.com/fleet-management-in-transportation-fenita-platform/"
+      },
+      {
+        "name": "Geographic Information System",
+        "description": "Geospatial applications for assets, operations and field intelligence",
+        "url": "https://www.nutech-integrasi.com/geographic-information-system-gis/"
+      },
+      {
+        "name": "Structure Health Monitoring System",
+        "description": "Infrastructure condition and structural monitoring",
+        "url": "https://www.nutech-integrasi.com/structure-health-monitoring-system/"
+      }
+    ],
+    "geospatial": [
+      "Interactive operational maps",
+      "Real-time asset & productivity monitoring",
+      "Fleet movement tracking",
+      "Fieldworker management",
+      "Pipeline risk analysis",
+      "Underground-asset inspection"
+    ]
+  },
+  "company": {
+    "purpose": "Become a trusted and healthy growth company.",
+    "vision": "Trusted and reliable partner in developing digital ecosystems for public transportation & security systems.",
+    "capabilities": [
+      {
+        "icon": "integration",
+        "title": "System Integration & Solution",
+        "description": "Combining software, hardware, network and specialized products around customer requirements."
+      },
+      {
+        "icon": "local",
+        "title": "Production & Local Content",
+        "description": "Developing domestic capability and local engineering for relevant ICT products and solutions."
+      },
+      {
+        "icon": "wrench",
+        "title": "Operation & Maintenance",
+        "description": "Structured service operations supporting continuity, availability and maintainability."
+      },
+      {
+        "icon": "repair",
+        "title": "Repair Facility",
+        "description": "Repair capability and technical support designed to improve asset serviceability and turnaround."
+      }
+    ],
+    "mission": [
+      "Deliver added value to customers and stakeholders.",
+      "Provide convenience and safety in the mass transportation ecosystem.",
+      "Develop digital talent and culture."
+    ]
+  },
+  "career": {
+    "openings": [
+      {
+        "title": "Account Manager",
+        "area": "Business & Commercial",
+        "requirements": [
+          "Bachelor degree in business, marketing, transportation management, engineering or related field",
+          "Minimum 5 years in sales, account management or business development",
+          "Transportation/logistics or technology-sector exposure preferred",
+          "Strong English communication, negotiation and stakeholder management"
+        ]
+      },
+      {
+        "title": "Node JS Programmer",
+        "area": "Engineering",
+        "requirements": [
+          "Bachelor degree or equivalent in Computer Science or related field",
+          "Minimum 2 years experience",
+          "NodeJS, JavaScript, PostgreSQL, Docker and RabbitMQ",
+          "REST API, Linux environment and modern JavaScript framework exposure"
+        ]
+      },
+      {
+        "title": "Mobile Apps Programmer (Flutter)",
+        "area": "Engineering",
+        "requirements": [
+          "Professional mobile application development experience",
+          "Released application portfolio on Google Play and/or App Store",
+          "Flutter, React Native or Java Android",
+          "REST API, state management, OOP and Git"
+        ]
+      },
+      {
+        "title": "React JS Programmer",
+        "area": "Engineering",
+        "requirements": [
+          "Strong HTML5, CSS3 and JavaScript fundamentals",
+          "ReactJS / NextJS or comparable modern frontend framework",
+          "RESTful API and asynchronous request handling",
+          "Cross-browser debugging, Git and SEO fundamentals"
+        ]
+      },
+      {
+        "title": "Java Programmer",
+        "area": "Engineering",
+        "requirements": [
+          "Bachelor degree in computer, telecommunications, electrical or related engineering",
+          "2–3 years Java development experience",
+          "Java Spring Boot is mandatory",
+          "PostgreSQL/Oracle, microservices, Kafka and source-code management"
+        ]
+      }
+    ]
+  },
+  "governance": {
+    "documents": [
+      "Corporate Governance Guidelines",
+      "Corporate Code of Conduct",
+      "Board of Commissioners Work Guidelines",
+      "Board of Directors Work Guidelines",
+      "Risk Management Guidelines",
+      "Accounting Policy Guidelines",
+      "Procurement Guidelines",
+      "Gratification Policy",
+      "Whistle Blower System Policy",
+      "Information Security Policy",
+      "Communication Policy & Procedure",
+      "Compliance Guidelines",
+      "Anti-Fraud Policy",
+      "Safety Management Policy",
+      "Consumer Protection Policy"
+    ],
+    "annualReports": [
+      "2025",
+      "2024",
+      "2023",
+      "2022",
+      "2021"
+    ]
+  }
+}
