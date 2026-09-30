@@ -2,33 +2,9 @@ import Link from 'next/link';
 import SiteHeader from '../components/SiteHeader';
 import SiteFooter from '../components/SiteFooter';
 import { Icon } from '../components/Icons';
+import { getHomeContent } from '../lib/content';
 
-const solutions = [
-  ['transit','Intelligent Transportation','AFC, queueing, toll, parking and transport operations.'],
-  ['payment','Electronic Payment','Smartcard, e-money, gateway and settlement integration.'],
-  ['shield','Security & Telemetry','Access control, CCTV, sensing and operational monitoring.'],
-  ['banking','Financial & Banking','ATM, CRM, VTM, EDC and transaction-device integration.'],
-];
-
-const capabilities = [
-  ['integration','System Integration','Connect hardware, software, network and specialized devices into one accountable system.'],
-  ['local','Production & Local Content','Support domestic engineering, production and customer-specific deployment needs.'],
-  ['wrench','Operation & Maintenance','Preventive and corrective services designed around service continuity.'],
-  ['repair','Repair Facility','Technical repair capability to improve turnaround and asset serviceability.'],
-];
-
-const projects = [
-  ['01','MRT Jakarta','EMV contactless payment','Urban rail'],
-  ['02','KAI Commuter','E-ticketing ecosystem','Commuter rail'],
-  ['03','ASDP Indonesia Ferry','Digital ticketing','Maritime'],
-  ['04','Batam International Port','Immigration autogate','Border security'],
-];
-
-const deploymentPhotos = [
-  ['https://www.nutech-integrasi.com/wp-content/uploads/2014/09/image-7-1024x469.jpg','Electronic Parking Terminal','Payment & Parking'],
-  ['https://www.nutech-integrasi.com/wp-content/uploads/2014/09/image-56-1024x356.jpg','Airport Bus Management System','Operational Monitoring'],
-  ['https://www.nutech-integrasi.com/wp-content/uploads/2014/08/image-8-1024x409.jpg','LRT Sumsel AFC','Automated Fare Collection'],
-];
+const { solutions, capabilities, projects, deploymentPhotos } = getHomeContent();
 
 export default function Home() {
   return (
@@ -98,7 +74,7 @@ export default function Home() {
           </div>
 
           <div className="solutionEditorialGrid">
-            {solutions.map(([icon,title,body],i)=>(
+            {solutions.map(({icon,title,body},i)=>(
               <Link className="solutionEditorialCard" href="/solutions" key={title}>
                 <div className="solutionCardMeta"><span>0{i+1}</span><Icon name={icon} size={25}/></div>
                 <div><h3>{title}</h3><p>{body}</p></div>
@@ -116,7 +92,7 @@ export default function Home() {
             <h2>From design to operation.</h2>
           </div>
           <div className="capEditorialList">
-            {capabilities.map(([icon,title,body],i)=>(
+            {capabilities.map(({icon,title,body},i)=>(
               <article key={title}>
                 <div className="capNum">0{i+1}</div>
                 <div className="capIcon"><Icon name={icon} size={26}/></div>
@@ -136,9 +112,9 @@ export default function Home() {
             <p>Selected implementation areas from Nutech's public portfolio across mobility, payments and security.</p>
           </div>
           <div className="experienceRail">
-            {projects.map(([no,name,work,sector])=>(
+            {projects.map(({name,work,sector},i)=>(
               <article key={name}>
-                <div className="experienceNo">{no}</div>
+                <div className="experienceNo">{String(i+1).padStart(2,'0')}</div>
                 <div className="experienceSector">{sector}</div>
                 <h3>{name}</h3>
                 <p>{work}</p>
@@ -159,7 +135,7 @@ export default function Home() {
             <p>First-party visuals from Nutech's current website establish the production photography direction: real devices, real sites, minimal decorative treatment.</p>
           </div>
           <div className="deploymentPhotoGrid">
-            {deploymentPhotos.map(([src,title,label],i)=>(
+            {deploymentPhotos.map(({src,title,label},i)=>(
               <figure key={title} className="deploymentPhoto">
                 <div>
                   <img src={src} alt={title} loading="lazy" decoding="async" referrerPolicy="no-referrer"/>
