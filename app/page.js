@@ -24,6 +24,12 @@ const projects = [
   ['04','Batam International Port','Immigration autogate','Border security'],
 ];
 
+const deploymentPhotos = [
+  ['https://www.nutech-integrasi.com/wp-content/uploads/2014/09/image-7-1024x469.jpg','Electronic Parking Terminal','Payment & Parking'],
+  ['https://www.nutech-integrasi.com/wp-content/uploads/2014/09/image-56-1024x356.jpg','Airport Bus Management System','Operational Monitoring'],
+  ['https://www.nutech-integrasi.com/wp-content/uploads/2014/08/image-8-1024x409.jpg','LRT Sumsel AFC','Automated Fare Collection'],
+];
+
 export default function Home() {
   return (
     <main>
@@ -145,10 +151,34 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="section deploymentStrip">
+        <div className="container">
+          <div className="deploymentStripHead">
+            <div><span className="sectionIndex">05</span><span className="kicker">FIELD DEPLOYMENT</span></div>
+            <h2>Technology shown in the context where it operates.</h2>
+            <p>First-party visuals from Nutech's current website establish the production photography direction: real devices, real sites, minimal decorative treatment.</p>
+          </div>
+          <div className="deploymentPhotoGrid">
+            {deploymentPhotos.map(([src,title,label],i)=>(
+              <figure key={title} className="deploymentPhoto">
+                <div>
+                  <img src={src} alt={title} loading="lazy" decoding="async" referrerPolicy="no-referrer"/>
+                  <span>{String(i+1).padStart(2,'0')}</span>
+                </div>
+                <figcaption><small>{label}</small><h3>{title}</h3></figcaption>
+              </figure>
+            ))}
+          </div>
+          <div className="deploymentPhotoLink">
+            <Link className="textLink" href="/experience">View implementation portfolio <Icon name="arrow" size={16}/></Link>
+          </div>
+        </div>
+      </section>
+
       <section className="section insightBand">
         <div className="container insightGrid">
           <div>
-            <span className="sectionIndex">05</span>
+            <span className="sectionIndex">06</span>
             <span className="kicker">WHY IT MATTERS</span>
             <h2>One operational outcome requires many technologies to behave like one system.</h2>
           </div>
