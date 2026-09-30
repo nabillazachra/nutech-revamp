@@ -7,6 +7,29 @@ export const metadata = {
   description: 'Selected public implementation experience of PT Nutech Integrasi across transportation, payment, security and digital infrastructure.',
 };
 
+const fieldVisuals = [
+  {
+    src:'https://www.nutech-integrasi.com/wp-content/uploads/2014/09/image-7-1024x469.jpg',
+    title:'Electronic Parking Terminal',
+    label:'Payment & Parking'
+  },
+  {
+    src:'https://www.nutech-integrasi.com/wp-content/uploads/2014/09/image-56-1024x356.jpg',
+    title:'Airport Bus Management System',
+    label:'Operational Monitoring'
+  },
+  {
+    src:'https://www.nutech-integrasi.com/wp-content/uploads/2014/09/image-5-958x1024.jpg',
+    title:'Rest Area Monitoring System',
+    label:'Traffic & Analytics'
+  },
+  {
+    src:'https://www.nutech-integrasi.com/wp-content/uploads/2014/08/image-8-1024x409.jpg',
+    title:'LRT Sumsel AFC',
+    label:'Automated Fare Collection'
+  },
+];
+
 const cases = [
   {
     year:'2024',
@@ -96,6 +119,34 @@ export default function ExperiencePage(){
             Public source <Icon name="arrow" size={16}/>
           </a>
         </article>)}
+      </div>
+    </section>
+
+    <section className="section fieldVisualSection">
+      <div className="container">
+        <div className="showcaseHead compactHead">
+          <div><span className="sectionIndex">08</span><span className="kicker">FIELD VISUALS</span></div>
+          <h2>Real deployments, not stock imagery.</h2>
+          <p>These transitional visuals are sourced from Nutech's current public website and are used here to establish the right photography direction for the production site.</p>
+        </div>
+        <div className="fieldVisualGrid">
+          {fieldVisuals.map((item,i)=><figure className="fieldVisual" key={item.title}>
+            <div className="fieldVisualImage">
+              <img
+                src={item.src}
+                alt={item.title}
+                loading="lazy"
+                decoding="async"
+                referrerPolicy="no-referrer"
+              />
+              <span>{String(i+1).padStart(2,'0')}</span>
+            </div>
+            <figcaption>
+              <small>{item.label}</small>
+              <h3>{item.title}</h3>
+            </figcaption>
+          </figure>)}
+        </div>
       </div>
     </section>
 
