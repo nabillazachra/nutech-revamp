@@ -4,7 +4,7 @@ import { Icon } from './Icons';
 
 const nav = [
   ['Solutions','/solutions'],
-  ['Experience','/#experience'],
+  ['Experience','/experience'],
   ['Company','/company'],
   ['GCG','/gcg'],
   ['Career','/career'],
