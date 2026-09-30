@@ -1,29 +1,15 @@
 import SiteHeader from '../../components/SiteHeader';
 import SiteFooter from '../../components/SiteFooter';
 import { Icon } from '../../components/Icons';
+import { getGovernanceContent, getContactContent } from '../../lib/content';
 
 export const metadata = {
   title: 'Good Corporate Governance | Nutech Integrasi',
   description: 'Good Corporate Governance information, annual reports and complaint channels for PT Nutech Integrasi.',
 };
 
-const docs=[
-  'Corporate Governance Guidelines',
-  'Corporate Code of Conduct',
-  'Board of Commissioners Work Guidelines',
-  'Board of Directors Work Guidelines',
-  'Risk Management Guidelines',
-  'Accounting Policy Guidelines',
-  'Procurement Guidelines',
-  'Gratification Policy',
-  'Whistle Blower System Policy',
-  'Information Security Policy',
-  'Communication Policy & Procedure',
-  'Compliance Guidelines',
-  'Anti-Fraud Policy',
-  'Safety Management Policy',
-  'Consumer Protection Policy'
-];
+const { documents, annualReports } = getGovernanceContent();
+const { emails, phones } = getContactContent();
 
 export default function GcgPage(){
   return <main>
@@ -37,7 +23,7 @@ export default function GcgPage(){
 
     <section className="section alt">
       <div className="container governanceGrid">
-        {docs.map((doc,i)=><article key={doc}>
+        {documents.map((doc,i)=><article key={doc}>
           <span>{String(i+1).padStart(2,'0')}</span>
           <h3>{doc}</h3>
           <a href="https://www.nutech-integrasi.com/gcg/" target="_blank" rel="noopener noreferrer">Open current source <Icon name="arrow" size={16}/></a>
@@ -49,7 +35,7 @@ export default function GcgPage(){
       <div className="container editorialBand">
         <div><span className="kicker">ANNUAL REPORT</span><h2>Corporate reporting, year by year.</h2></div>
         <div className="yearPills">
-          {['2025','2024','2023','2022','2021'].map(y=><a key={y} href="https://www.nutech-integrasi.com/gcg/" target="_blank" rel="noopener noreferrer">{y}</a>)}
+          {annualReports.map(y=><a key={y} href="https://www.nutech-integrasi.com/gcg/" target="_blank" rel="noopener noreferrer">{y}</a>)}
         </div>
       </div>
     </section>
@@ -61,8 +47,8 @@ export default function GcgPage(){
           <h2>Published channels for complaints and whistleblowing.</h2>
         </div>
         <div className="complaintLinks">
-          <a href="tel:+6281117003237">0811-17003237 <Icon name="arrow" size={17}/></a>
-          <a href="mailto:nutech.wbs@nutech-integrasi.com">nutech.wbs@nutech-integrasi.com <Icon name="arrow" size={17}/></a>
+          <a href={'tel:'+phones.wbs}>0811-17003237 <Icon name="arrow" size={17}/></a>
+          <a href={'mailto:'+emails.wbs}>{emails.wbs} <Icon name="arrow" size={17}/></a>
         </div>
       </div>
     </section>
