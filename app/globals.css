@@ -329,3 +329,14 @@ footer{margin-top:0}
   .caseDetailHero{padding-top:118px}
   .caseBack{margin-bottom:28px}
 }
+
+
+/* Official Nutech brand assets */
+.brandAsset{display:inline-flex;align-items:center;line-height:0}
+.brandLogo{display:block;width:128px;height:auto;object-fit:contain}
+.brandLight .brandLogo{filter:brightness(0) invert(1)}
+footer .brandLogo{width:174px}
+@media(max-width:680px){
+  .brandLogo{width:112px}
+  footer .brandLogo{width:152px}
+}
