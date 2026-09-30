@@ -15,6 +15,11 @@ export const metadata = {
   description:
     'PT Nutech Integrasi delivers end-to-end ICT system integration across transportation, payments, security, telemetry, financial services, maintenance and repair.',
   applicationName: 'Nutech Integrasi',
+  icons: {
+    icon: '/favicon.png',
+    shortcut: '/favicon.png',
+    apple: '/favicon.png',
+  },
   robots: {
     index: allowIndexing,
     follow: allowIndexing,
@@ -46,6 +51,7 @@ const organizationSchema = {
     '@type': 'Organization',
     name: site.group,
   },
+  logo: siteUrl + '/brand/nutech-logo-light.png',
   address: {
     '@type': 'PostalAddress',
     streetAddress: site.offices.management.address,
