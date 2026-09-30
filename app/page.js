@@ -84,10 +84,12 @@ export default function Home() {
               <div><small>DATA</small><strong>Monitoring · GIS · Analytics</strong></div>
             </div>
 
-            <span className="heroV3Connector connectorA" aria-hidden="true" />
-            <span className="heroV3Connector connectorB" aria-hidden="true" />
-            <span className="heroV3Connector connectorC" aria-hidden="true" />
-            <span className="heroV3Connector connectorD" aria-hidden="true" />
+            <svg className="heroV3Network" viewBox="0 0 1000 700" preserveAspectRatio="none" aria-hidden="true">
+              <path d="M246 170 H360 V286 H430" />
+              <path d="M754 206 H640 V286 H570" />
+              <path d="M252 530 H360 V414 H430" />
+              <path d="M748 518 H640 V414 H570" />
+            </svg>
 
             <div className="heroV3Footer">
               <span>Hardware</span>
@@ -166,10 +168,12 @@ export default function Home() {
                   <small>BUSINESS</small>
                   <strong>Data</strong>
                 </div>
-                <span className="blueprintLine lineA" />
-                <span className="blueprintLine lineB" />
-                <span className="blueprintLine lineC" />
-                <span className="blueprintLine lineD" />
+                <svg className="solutionBlueprintNetwork" viewBox="0 0 1000 700" preserveAspectRatio="none" aria-hidden="true">
+                  <path d="M210 150 H362 V282 H470" />
+                  <path d="M790 190 H638 V282 H530" />
+                  <path d="M220 552 H362 V418 H470" />
+                  <path d="M780 536 H638 V418 H530" />
+                </svg>
               </div>
 
               <div className="solutionBlueprintFooter">
@@ -251,10 +255,12 @@ export default function Home() {
                   <div><small>OPERATIONS</small><strong>Monitoring · GIS · Analytics</strong></div>
                 </div>
 
-                <span className="experienceSystemLine expLineA" aria-hidden="true" />
-                <span className="experienceSystemLine expLineB" aria-hidden="true" />
-                <span className="experienceSystemLine expLineC" aria-hidden="true" />
-                <span className="experienceSystemLine expLineD" aria-hidden="true" />
+                <svg className="experienceSystemNetwork" viewBox="0 0 1000 700" preserveAspectRatio="none" aria-hidden="true">
+                  <path d="M220 152 H360 V282 H445" />
+                  <path d="M780 204 H640 V282 H555" />
+                  <path d="M228 532 H360 V418 H445" />
+                  <path d="M772 514 H640 V418 H555" />
+                </svg>
               </div>
 
               <div className="experienceSystemFoot">
