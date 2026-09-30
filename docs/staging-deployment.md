@@ -1,51 +1,71 @@
-# Staging deployment
+# GitHub Pages deployment
 
-## Recommended provider
+## Hosting model
 
-Vercel is the preferred staging target for this Next.js App Router project because it can build the repository without changing the application architecture.
+This project is deployed as a **static Next.js export** to GitHub Pages.
 
-## Required environment values
+Repository:
 
-### Preview / staging
+`nabillazachra/nutech-revamp`
+
+Expected project-site URL:
+
+`https://nabillazachra.github.io/nutech-revamp/`
+
+## One-time repository setting
+
+GitHub Pages must be enabled once by the repository owner:
+
+**Settings → Pages → Build and deployment → Source → GitHub Actions**
+
+The workflow cannot perform this account-level enablement with the repository GitHub Actions token.
+
+## Build configuration
+
+The Pages workflow sets:
 
 ```
-ALLOW_INDEXING=false
-```
-
-`SITE_URL` is optional for Vercel preview deployments because the application can derive its current preview hostname from `VERCEL_URL`.
-
-### Production
-
-```
-SITE_URL=https://www.nutech-integrasi.com
+NEXT_PUBLIC_BASE_PATH=/nutech-revamp
+SITE_URL=https://nabillazachra.github.io/nutech-revamp
 ALLOW_INDEXING=true
 ```
 
-Do not set `ALLOW_INDEXING=true` on preview deployments.
+CI uses the same base path but keeps `ALLOW_INDEXING=false` so it can verify preview noindex behavior.
 
-## Deployment acceptance checks
+## Pipeline
 
-Before a preview is accepted:
+Every push to `main` runs:
 
-1. CI must pass.
-2. CodeQL must pass.
-3. `/api/health` must return HTTP 200.
-4. `/robots.txt` must contain `Disallow: /` on staging.
-5. The rendered HTML must include `noindex` on staging.
-6. Security response headers must be present.
-7. Homepage, Solutions, Experience, one case-study detail, Company, GCG, Career and Contact must return HTTP 200.
-8. Desktop and mobile layouts must be visually reviewed.
-9. External Nutech media must load without mixed content.
-10. No production DNS changes are made during staging review.
+1. dependency installation;
+2. corporate content validation;
+3. production dependency security audit;
+4. static Next.js export;
+5. static export smoke test in CI;
+6. CodeQL;
+7. GitHub Pages artifact build and deployment.
 
-## Production cutover prerequisites
+## Static-hosting constraints
 
-- approved official logo master;
-- approved high-resolution project assets moved off legacy WordPress media paths where possible;
-- legacy URL redirect map;
-- final CMS integration;
-- analytics/privacy configuration;
-- accessibility QA;
-- Core Web Vitals review;
-- backup and rollback plan;
-- production DNS change approved by Nutech.
+GitHub Pages does not provide a Node.js/Next.js runtime.
+
+Therefore:
+
+- application pages must be statically exportable;
+- dynamic case-study routes must use `generateStaticParams`;
+- no server actions;
+- no runtime API endpoints;
+- no middleware dependency;
+- no server-side form processing;
+- security response headers normally configured by Next.js cannot be relied on.
+
+A static `health.json` marker is published instead of a runtime health API.
+
+## Production checklist
+
+- official Nutech logo master;
+- approved project imagery stored under controlled assets;
+- accessibility review;
+- mobile/desktop visual QA;
+- legacy URL redirect strategy if the GitHub Pages URL later replaces the existing public site;
+- analytics/privacy review;
+- CMS strategy appropriate for static generation or a separate content build trigger.
