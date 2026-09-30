@@ -9,27 +9,11 @@ export const metadata = {
   description: 'Selected public implementation experience of PT Nutech Integrasi across transportation, payment, security and digital infrastructure.',
 };
 
-const fieldVisuals = [
-  {
-    src:'https://www.nutech-integrasi.com/wp-content/uploads/2014/09/image-7-1024x469.jpg',
-    title:'Electronic Parking Terminal',
-    label:'Payment & Parking'
-  },
-  {
-    src:'https://www.nutech-integrasi.com/wp-content/uploads/2014/09/image-56-1024x356.jpg',
-    title:'Airport Bus Management System',
-    label:'Operational Monitoring'
-  },
-  {
-    src:'https://www.nutech-integrasi.com/wp-content/uploads/2014/09/image-5-958x1024.jpg',
-    title:'Rest Area Monitoring System',
-    label:'Traffic & Analytics'
-  },
-  {
-    src:'https://www.nutech-integrasi.com/wp-content/uploads/2014/08/image-8-1024x409.jpg',
-    title:'LRT Sumsel AFC',
-    label:'Automated Fare Collection'
-  },
+const implementationSurfaces = [
+  ['transit','Passenger & Fare Collection','Gate, validator, ticketing and passenger-access systems.'],
+  ['payment','Payment & Settlement','EMV, e-money, transaction processing and settlement integration.'],
+  ['shield','Security & Access','Autogate, physical access, surveillance and security integration.'],
+  ['map','Monitoring & Geospatial','Operational monitoring, GIS, analytics and field intelligence.'],
 ];
 
 export default function ExperiencePage(){
@@ -66,30 +50,20 @@ export default function ExperiencePage(){
       </div>
     </section>
 
-    <section className="section fieldVisualSection">
+    <section className="section implementationSurfaceSection">
       <div className="container">
         <div className="showcaseHead compactHead">
-          <div><span className="sectionIndex">08</span><span className="kicker">FIELD VISUALS</span></div>
-          <h2>Real deployments, not stock imagery.</h2>
-          <p>These transitional visuals are sourced from Nutech's current public website and are used here to establish the right photography direction for the production site.</p>
+          <div><span className="sectionIndex">08</span><span className="kicker">IMPLEMENTATION SURFACES</span></div>
+          <h2>Project context without low-resolution imagery.</h2>
+          <p>Until approved high-resolution project photography is supplied, the portfolio uses resolution-independent technical visuals rather than stretching legacy WordPress images.</p>
         </div>
-        <div className="fieldVisualGrid">
-          {fieldVisuals.map((item,i)=><figure className="fieldVisual" key={item.title}>
-            <div className="fieldVisualImage">
-              <img
-                src={item.src}
-                alt={item.title}
-                loading="lazy"
-                decoding="async"
-                referrerPolicy="no-referrer"
-              />
-              <span>{String(i+1).padStart(2,'0')}</span>
-            </div>
-            <figcaption>
-              <small>{item.label}</small>
-              <h3>{item.title}</h3>
-            </figcaption>
-          </figure>)}
+
+        <div className="implementationSurfaceList">
+          {implementationSurfaces.map(([icon,title,description],i)=><article key={title}>
+            <span>{String(i+1).padStart(2,'0')}</span>
+            <Icon name={icon} size={25}/>
+            <div><h3>{title}</h3><p>{description}</p></div>
+          </article>)}
         </div>
       </div>
     </section>
