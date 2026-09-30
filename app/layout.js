@@ -3,6 +3,7 @@ import { getSiteContent } from '../lib/content';
 import { getSiteUrl } from '../lib/site-url';
 
 const allowIndexing = process.env.ALLOW_INDEXING === 'true';
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 const siteUrl = getSiteUrl();
 const { site } = getSiteContent();
 
@@ -16,9 +17,9 @@ export const metadata = {
     'PT Nutech Integrasi delivers end-to-end ICT system integration across transportation, payments, security, telemetry, financial services, maintenance and repair.',
   applicationName: 'Nutech Integrasi',
   icons: {
-    icon: '/favicon.png',
-    shortcut: '/favicon.png',
-    apple: '/favicon.png',
+    icon: basePath + '/favicon.png',
+    shortcut: basePath + '/favicon.png',
+    apple: basePath + '/favicon.png',
   },
   robots: {
     index: allowIndexing,
