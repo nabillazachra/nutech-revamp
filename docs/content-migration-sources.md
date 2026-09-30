@@ -47,7 +47,17 @@ Public content may be referenced for information architecture and migration, but
 - https://www.nutech-integrasi.com/2014/08/25/lrt-sumsel/ — LRT Sumsel AFC.
 
 
-## Transitional visual assets
-The current Hi-Fi uses selected first-party deployment images served from `www.nutech-integrasi.com` to establish the photography direction during the revamp. The CSP permits images from that first-party origin only.
+## Visual asset policy
 
-Before production cutover, replace these remote URLs with approved master files stored in the final Nutech asset repository/CDN. This avoids coupling the new frontend to legacy WordPress media paths and ensures image ownership, cropping, optimization and lifecycle are controlled by Nutech.
+Legacy project photographs from the existing WordPress site are **not rendered in the current UI** unless an approved high-resolution master is available.
+
+Current production-facing visual rules:
+
+- official Nutech logo is stored locally under `public/brand/`;
+- favicon is stored locally;
+- homepage hero and system visuals are resolution-independent CSS/SVG-style graphics;
+- Experience implementation visuals are resolution-independent technical schematics;
+- low-resolution WordPress derivatives such as `-1024x...` are intentionally excluded from rendered pages;
+- approved high-resolution project photography can be introduced later when internal master files are provided.
+
+This avoids stretching legacy assets on retina/4K displays and removes runtime dependency on old WordPress media URLs.
