@@ -90,23 +90,6 @@
         "work": "Immigration autogate",
         "sector": "Border security"
       }
-    ],
-    "deploymentPhotos": [
-      {
-        "src": "https://www.nutech-integrasi.com/wp-content/uploads/2014/09/image-7-1024x469.jpg",
-        "title": "Electronic Parking Terminal",
-        "label": "Payment & Parking"
-      },
-      {
-        "src": "https://www.nutech-integrasi.com/wp-content/uploads/2014/09/image-56-1024x356.jpg",
-        "title": "Airport Bus Management System",
-        "label": "Operational Monitoring"
-      },
-      {
-        "src": "https://www.nutech-integrasi.com/wp-content/uploads/2014/08/image-8-1024x409.jpg",
-        "title": "LRT Sumsel AFC",
-        "label": "Automated Fare Collection"
-      }
     ]
   },
   "solutions": {
