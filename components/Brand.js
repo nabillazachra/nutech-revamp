@@ -1,10 +1,16 @@
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
 export default function Brand({ light = false }) {
   return (
-    <div className={`brand ${light ? 'brandLight' : ''}`} aria-label="Nutech Integrasi">
-      <div className="brandWordmark">
-        <span className="brandNu">nu</span><span className="brandTech">t<span className="brandE">e</span>ch</span>
-      </div>
-      <div className="brandSub">by Telkom Indonesia</div>
-    </div>
+    <span className={`brand brandAsset ${light ? 'brandLight' : ''}`} aria-label="Nutech Integrasi by Telkom Indonesia">
+      <img
+        className="brandLogo"
+        src={basePath + '/brand/nutech-logo-light.png'}
+        alt="Nutech by Telkom Indonesia"
+        width="520"
+        height="224"
+        decoding="async"
+      />
+    </span>
   );
 }
