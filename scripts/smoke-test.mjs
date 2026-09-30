@@ -1,73 +1,57 @@
 #!/usr/bin/env node
-import { spawn } from 'node:child_process';
+import fs from 'node:fs';
+import path from 'node:path';
 
-const baseUrl = 'http://127.0.0.1:3000';
-const routes = [
-  '/',
-  '/solutions',
-  '/experience',
-  '/experience/mrt-jakarta-emv',
-  '/company',
-  '/gcg',
-  '/career',
-  '/contact',
-  '/robots.txt',
-  '/sitemap.xml',
+const outDir = path.resolve('out');
+const requiredFiles = [
+  'index.html',
+  'solutions/index.html',
+  'experience/index.html',
+  'experience/mrt-jakarta-emv/index.html',
+  'company/index.html',
+  'gcg/index.html',
+  'career/index.html',
+  'contact/index.html',
+  '404.html',
+  'robots.txt',
+  'sitemap.xml',
+  'health.json',
 ];
 
-const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+const errors = [];
 
-async function waitForServer() {
-  for (let attempt = 0; attempt < 30; attempt += 1) {
-    try {
-      const response = await fetch(baseUrl, { redirect: 'manual' });
-      if (response.ok) return;
-    } catch {}
-    await sleep(1000);
-  }
-  throw new Error('Next.js server did not become ready in time');
+for (const file of requiredFiles) {
+  const fullPath = path.join(outDir, file);
+  if (!fs.existsSync(fullPath)) errors.push('Missing static export file: ' + file);
+  else console.log('OK ' + file);
 }
 
-function assertHeader(response, name, expected) {
-  const value = response.headers.get(name);
-  if (!value || !value.toLowerCase().includes(expected.toLowerCase())) {
-    throw new Error(`Expected ${name} to include "${expected}", got "${value}"`);
+const homepage = path.join(outDir, 'index.html');
+if (fs.existsSync(homepage)) {
+  const html = fs.readFileSync(homepage, 'utf8');
+  if (!html.includes('noindex')) errors.push('Preview export must include noindex');
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+  if (basePath && !html.includes(basePath + '/_next/')) {
+    errors.push('Exported asset URLs do not include GitHub Pages base path');
   }
 }
 
-const server = spawn('npm', ['run', 'start'], {
-  env: { ...process.env, HOSTNAME: '127.0.0.1', PORT: '3000', ALLOW_INDEXING: 'false' },
-  stdio: 'inherit',
-});
-
-try {
-  await waitForServer();
-
-  for (const route of routes) {
-    const response = await fetch(baseUrl + route, { redirect: 'manual' });
-    if (!response.ok) {
-      throw new Error(`${route} returned HTTP ${response.status}`);
-    }
-    console.log(`OK ${response.status} ${route}`);
-  }
-
-  const homepage = await fetch(baseUrl);
-  assertHeader(homepage, 'x-content-type-options', 'nosniff');
-  assertHeader(homepage, 'x-frame-options', 'DENY');
-  assertHeader(homepage, 'referrer-policy', 'strict-origin-when-cross-origin');
-  assertHeader(homepage, 'content-security-policy', "default-src 'self'");
-
-  const robots = await (await fetch(baseUrl + '/robots.txt')).text();
-  if (!robots.includes('Disallow: /')) {
-    throw new Error('Preview robots.txt must block indexing when ALLOW_INDEXING=false');
-  }
-
-  const html = await homepage.text();
-  if (!html.includes('noindex')) {
-    throw new Error('Preview HTML must include noindex metadata when ALLOW_INDEXING=false');
-  }
-
-  console.log('Runtime smoke test passed.');
-} finally {
-  server.kill('SIGTERM');
+const robots = path.join(outDir, 'robots.txt');
+if (fs.existsSync(robots)) {
+  const text = fs.readFileSync(robots, 'utf8');
+  if (!text.includes('Disallow: /')) errors.push('Preview robots.txt must block indexing');
 }
+
+const health = path.join(outDir, 'health.json');
+if (fs.existsSync(health)) {
+  const data = JSON.parse(fs.readFileSync(health, 'utf8'));
+  if (data.status !== 'ok') errors.push('health.json must report ok');
+}
+
+if (errors.length) {
+  console.error('Static export smoke test failed:');
+  for (const error of errors) console.error('- ' + error);
+  process.exit(1);
+}
+
+console.log('Static export smoke test passed.');
