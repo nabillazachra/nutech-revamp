@@ -8,11 +8,11 @@ export const metadata = {
 };
 
 const openings = [
-  ['Account Manager','Business & Commercial','Build strategic customer relationships and translate business needs into integrated solutions.'],
-  ['Node JS Programmer','Engineering','Develop backend applications, APIs and integration services for digital platforms.'],
-  ['Mobile Apps Programmer (Flutter)','Engineering','Build reliable mobile applications connected to APIs and operational services.'],
-  ['React JS Programmer','Engineering','Develop maintainable, responsive web interfaces using modern JavaScript.'],
-  ['Java Programmer','Engineering','Develop Java services and enterprise integrations using robust backend architecture.'],
+  ['Account Manager','Business & Commercial',['Bachelor degree in business, marketing, transportation management, engineering or related field','Minimum 5 years in sales, account management or business development','Transportation/logistics or technology-sector exposure preferred','Strong English communication, negotiation and stakeholder management']],
+  ['Node JS Programmer','Engineering',['Bachelor degree or equivalent in Computer Science or related field','Minimum 2 years experience','NodeJS, JavaScript, PostgreSQL, Docker and RabbitMQ','REST API, Linux environment and modern JavaScript framework exposure']],
+  ['Mobile Apps Programmer (Flutter)','Engineering',['Professional mobile application development experience','Released application portfolio on Google Play and/or App Store','Flutter, React Native or Java Android','REST API, state management, OOP and Git']],
+  ['React JS Programmer','Engineering',['Strong HTML5, CSS3 and JavaScript fundamentals','ReactJS / NextJS or comparable modern frontend framework','RESTful API and asynchronous request handling','Cross-browser debugging, Git and SEO fundamentals']],
+  ['Java Programmer','Engineering',['Bachelor degree in computer, telecommunications, electrical or related engineering','2–3 years Java development experience','Java Spring Boot is mandatory','PostgreSQL/Oracle, microservices, Kafka and source-code management']],
 ];
 
 export default function CareerPage(){
@@ -30,6 +30,7 @@ export default function CareerPage(){
         </div>
       </div>
     </section>
+
     <section className="section editorialIntro">
       <div className="container editorialIntroGrid">
         <div className="sectionIndex">01</div>
@@ -37,22 +38,34 @@ export default function CareerPage(){
         <p>Nutech projects connect applications with gates, devices, payment systems, networks and field operations—giving teams exposure to software and infrastructure in real-world use.</p>
       </div>
     </section>
+
     <section className="section alt" id="openings">
       <div className="container">
         <div className="showcaseHead compactHead">
           <div><span className="sectionIndex">02</span><span className="kicker">CURRENT OPPORTUNITIES</span></div>
           <h2>Find where you can contribute.</h2>
-          <p>Roles below reflect vacancies published on Nutech's corporate career page. Detailed requirements remain subject to official recruitment information.</p>
+          <p>Roles and condensed requirements below are migrated from Nutech's current public Career page. Official recruitment information remains the source of truth.</p>
         </div>
-        <div className="jobs jobsEditorial">
-          {openings.map(([title,area,summary],i)=><article key={title}>
+
+        <div className="jobs jobsDetailed">
+          {openings.map(([title,area,requirements],i)=><article key={title}>
             <span>0{i+1}</span>
-            <div><small>{area}</small><h3>{title}</h3><p>{summary}</p></div>
-            <a href={'mailto:hrd@nutech-integrasi.com?subject='+encodeURIComponent(title+'_Application')}>Apply <Icon name="arrow" size={17}/></a>
+            <div>
+              <small>{area}</small>
+              <h3>{title}</h3>
+              <ul>{requirements.map(req=><li key={req}>{req}</li>)}</ul>
+            </div>
+            <a href={'mailto:hrd@nutech-integrasi.com?subject='+encodeURIComponent(title+'_Jakarta')}>Apply <Icon name="arrow" size={17}/></a>
           </article>)}
+        </div>
+
+        <div className="applicationNote">
+          <span className="kicker">APPLICATION FORMAT</span>
+          <p>Send your complete resume, optional portfolio and expected salary to <a href="mailto:hrd@nutech-integrasi.com">hrd@nutech-integrasi.com</a> with subject <strong>Position_Name_Location</strong>.</p>
         </div>
       </div>
     </section>
+
     <section className="section careerContact">
       <div className="container editorialBand">
         <div><span className="kicker light">GENERAL APPLICATION</span><h2>Not seeing your role yet?</h2></div>
