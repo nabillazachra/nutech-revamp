@@ -9,7 +9,8 @@
     "start": "next start",
     "check": "npm run validate:content && next build",
     "audit:prod": "npm audit --omit=dev --audit-level=high",
-    "validate:content": "node scripts/validate-content.mjs"
+    "validate:content": "node scripts/validate-content.mjs",
+    "smoke": "node scripts/smoke-test.mjs"
   },
   "engines": {
     "node": ">=20.9.0"
