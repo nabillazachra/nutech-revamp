@@ -220,3 +220,27 @@ footer{margin-top:0}
   .jobsDetailed article{grid-template-columns:34px 1fr}
   .jobsDetailed article>a{grid-column:2}
 }
+
+.experienceMore{display:flex;justify-content:flex-end;margin-top:26px}
+.experiencePageHero{min-height:520px;display:flex;align-items:end}
+.experienceCaseList{border-top:1px solid #d9dad6}
+.experienceCase{display:grid;grid-template-columns:44px 150px 1fr auto;gap:28px;padding:34px 0;border-bottom:1px solid #d9dad6;align-items:start}
+.experienceCaseNo{font-size:10px;color:#9ba0a4;padding-top:5px}
+.experienceCaseMeta{display:flex;flex-direction:column;gap:7px}
+.experienceCaseMeta span:first-child{font-size:12px;font-weight:750}
+.experienceCaseMeta span:last-child{font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--orange)}
+.experienceCaseMain h2{font-size:28px;line-height:1.08;letter-spacing:-.03em;margin:0 0 12px}
+.experienceCaseMain p{max-width:680px;color:#6f757a;line-height:1.7}
+.tagRow{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+.tagRow span{font-size:9px;letter-spacing:.08em;text-transform:uppercase;border:1px solid #d5d7d3;padding:7px 9px;background:#fff}
+.experienceSource{display:inline-flex;align-items:center;gap:8px;color:var(--orange);font-size:12px;font-weight:700;white-space:nowrap;padding-top:4px}
+@media(max-width:900px){
+  .experienceCase{grid-template-columns:36px 120px 1fr}
+  .experienceSource{grid-column:3}
+}
+@media(max-width:680px){
+  .experienceCase{grid-template-columns:32px 1fr;gap:16px}
+  .experienceCaseMeta{grid-column:2}
+  .experienceCaseMain{grid-column:2}
+  .experienceSource{grid-column:2}
+}
