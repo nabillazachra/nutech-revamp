@@ -72,3 +72,36 @@ Keep API keys, CMS credentials, SMTP credentials, database URLs, tokens, and pri
 ### CSP note
 
 Next.js currently emits framework inline bootstrap scripts for this App Router setup, so the baseline policy permits inline framework scripts. When the project gains authentication, forms, CMS mutation, or other sensitive flows, move to a nonce-based CSP generated per request and remove `unsafe-inline` from `script-src`.
+
+
+## GitHub-only deployment
+
+This project is configured for **GitHub Pages** as a static Next.js export.
+
+Expected public URL:
+
+`https://nabillazachra.github.io/nutech-revamp/`
+
+Every push to `main` runs:
+
+- content validation;
+- production dependency audit;
+- static Next.js export;
+- static export smoke tests;
+- CodeQL;
+- upload of a `nutech-pages-preview` artifact for QA.
+
+Because this is a project site, the production build uses:
+
+```
+NEXT_PUBLIC_BASE_PATH=/nutech-revamp
+SITE_URL=https://nabillazachra.github.io/nutech-revamp
+```
+
+### One-time GitHub Pages enablement
+
+The repository owner must enable Pages once from:
+
+**Settings → Pages → Build and deployment → Source → GitHub Actions**
+
+The repository Actions token cannot create the Pages site for the first time. After this setting is enabled, run the **Deploy GitHub Pages** workflow manually. Subsequent deployment workflow changes can then be managed entirely inside GitHub.
