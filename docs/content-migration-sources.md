@@ -28,7 +28,7 @@ This file records the public source pages used to preserve context from the curr
 
 ## Good Corporate Governance
 - https://www.nutech-integrasi.com/gcg/
-- Preserved policy-document categories, annual-report years currently published (2024–2021), complaint number and WBS email.
+- Preserved policy-document categories, annual-report years currently published (2025–2021), complaint number and WBS email.
 
 ## Corporate contact
 - Public footer/contact information on current Nutech pages.
@@ -37,3 +37,11 @@ This file records the public source pages used to preserve context from the curr
 
 ## Asset policy
 Public content may be referenced for information architecture and migration, but production deployment should use approved first-party master brand assets and project photography supplied/approved by PT Nutech Integrasi. The current prototype intentionally does not hotlink third-party or unverified image assets.
+
+
+## Selected experience
+- 2024 Annual Report: MRT Jakarta EMV, ASDP e-ticketing context and Batam Center Immigration Autogate.
+- 2023 Annual Report: LRT Jabodebek soft launching.
+- https://www.nutech-integrasi.com/news/ — Railink airport railway e-ticketing scope.
+- https://www.nutech-integrasi.com/product-launching-dan-kunjungan/ — DAMRI On-Bus Validator.
+- https://www.nutech-integrasi.com/2014/08/25/lrt-sumsel/ — LRT Sumsel AFC.
