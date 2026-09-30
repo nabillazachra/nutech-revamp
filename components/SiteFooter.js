@@ -22,10 +22,12 @@ export default function SiteFooter(){
           <Link href="/contact">Contact</Link>
         </div>
         <div>
-          <strong>Contact</strong>
+          <strong>Management Office</strong>
+          <span>Gedung Nutech</span>
+          <span>Jl. Buncit Raya Kav. 99</span>
+          <span>Pejaten Barat, Jakarta Selatan 12510</span>
+          <a href="tel:+622127808111">+62 21 2780 8111</a>
           <a href="mailto:info@nutech-integrasi.com">info@nutech-integrasi.com</a>
-          <a href="tel:+62217803827">+62 21 780 3827</a>
-          <span>Jakarta Selatan, Indonesia</span>
         </div>
       </div>
       <div className="container footerBottom">© 2026 PT Nutech Integrasi — Website revamp concept</div>
