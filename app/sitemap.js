@@ -1,3 +1,5 @@
+export const dynamic = 'force-static';
+
 import { experienceCases } from '../content/experience';
 
 export default function sitemap() {
