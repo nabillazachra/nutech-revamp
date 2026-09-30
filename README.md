@@ -37,8 +37,18 @@ The prototype uses an approximate orange/graphite palette derived from Nutech's 
 
 ## Routes
 
-- `/` — Homepage revamp prototype
-- `/career` — Career page prototype based on current Nutech vacancy content
+- `/` — Hi-Fi editorial homepage
+- `/solutions` — Product & solution overview
+- `/company` — Company positioning, vision, mission and capabilities
+- `/gcg` — Good Corporate Governance information architecture
+- `/career` — Career opportunities
+- `/contact` — Corporate contact channels
+
+## Current design phase
+
+The repository is now at **Hi-Fi v1**. The visual direction intentionally avoids generic SaaS/card-heavy patterns and uses a more corporate editorial system: stronger typography, linear information hierarchy, technical system diagrams, restrained orange accents and fewer decorative UI elements.
+
+Next production passes should prioritize approved Nutech brand assets, authentic project photography, case-study detail pages, CMS-backed content, redirect mapping from the existing site, accessibility validation and analytics.
 
 ## Security baseline
 
