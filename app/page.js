@@ -7,8 +7,7 @@ import { getHomeContent } from '../lib/content';
 const { solutions, capabilities, projects, deploymentPhotos } = getHomeContent();
 
 export default function Home() {
-  const heroPhoto = deploymentPhotos[2] || deploymentPhotos[0];
-  const experiencePhoto = deploymentPhotos[0] || heroPhoto;
+  const experiencePhoto = deploymentPhotos[0];
 
   return (
     <main>
@@ -48,36 +47,54 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="homeV2HeroVisual">
-            <img
-              src={heroPhoto.src}
-              alt={heroPhoto.title}
-              decoding="async"
-              referrerPolicy="no-referrer"
-            />
-            <div className="heroPhotoWash" aria-hidden="true" />
-
-            <div className="heroVisualTop">
-              <span>FIELD SYSTEM / INTEGRATION VIEW</span>
-              <span>01</span>
+          <div className="homeV3HeroVisual" aria-label="Nutech system integration illustration">
+            <div className="heroV3Grid" aria-hidden="true" />
+            <div className="heroV3Topline">
+              <span>SYSTEM INTEGRATION / INDONESIA</span>
+              <span>LIVE ARCHITECTURE</span>
             </div>
 
-            <div className="heroAnnotation heroAnnotationA">
-              <span>01</span>
-              <div><small>FIELD LAYER</small><strong>Gate · Validator · Device</strong></div>
+            <div className="heroV3Core">
+              <div className="heroV3CoreRing">
+                <div className="heroV3CoreInner">
+                  <Icon name="integration" size={34}/>
+                  <small>INTEGRATION LAYER</small>
+                  <strong>NUTECH</strong>
+                </div>
+              </div>
             </div>
-            <div className="heroAnnotation heroAnnotationB">
+
+            <div className="heroV3Node nodeMobility">
+              <span>01</span>
+              <Icon name="transit" size={22}/>
+              <div><small>MOBILITY</small><strong>Gate · AFC · Fleet</strong></div>
+            </div>
+            <div className="heroV3Node nodePaymentV3">
               <span>02</span>
-              <div><small>PLATFORM LAYER</small><strong>AFC · Payment · Monitoring</strong></div>
+              <Icon name="payment" size={22}/>
+              <div><small>PAYMENT</small><strong>EMV · E-Money · Settlement</strong></div>
             </div>
-            <div className="heroAnnotation heroAnnotationC">
+            <div className="heroV3Node nodeSecurityV3">
               <span>03</span>
-              <div><small>INTEGRATION</small><strong>Nutech System Integration</strong></div>
+              <Icon name="shield" size={22}/>
+              <div><small>SECURITY</small><strong>Access · CCTV · Telemetry</strong></div>
+            </div>
+            <div className="heroV3Node nodeDataV3">
+              <span>04</span>
+              <Icon name="map" size={22}/>
+              <div><small>DATA</small><strong>Monitoring · GIS · Analytics</strong></div>
             </div>
 
-            <div className="heroVisualCaption">
-              <small>{heroPhoto.label}</small>
-              <strong>{heroPhoto.title}</strong>
+            <span className="heroV3Connector connectorA" aria-hidden="true" />
+            <span className="heroV3Connector connectorB" aria-hidden="true" />
+            <span className="heroV3Connector connectorC" aria-hidden="true" />
+            <span className="heroV3Connector connectorD" aria-hidden="true" />
+
+            <div className="heroV3Footer">
+              <span>Hardware</span>
+              <span>Software</span>
+              <span>Integration</span>
+              <span>Lifecycle Support</span>
             </div>
           </div>
         </div>
