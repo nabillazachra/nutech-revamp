@@ -65,7 +65,7 @@ export default function CareerPage(){
     <section className="section careerContact">
       <div className="container editorialBand">
         <div><span className="kicker light">GENERAL APPLICATION</span><h2>Not seeing your role yet?</h2></div>
-        <a className="btn lightButton" href="mailto:${emails.hr}">Send your CV <Icon name="arrow" size={18}/></a>
+        <a className="btn lightButton" href={'mailto:'+emails.hr}>Send your CV <Icon name="arrow" size={18}/></a>
       </div>
     </section>
     <SiteFooter/>
