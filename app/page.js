@@ -4,10 +4,9 @@ import SiteFooter from '../components/SiteFooter';
 import { Icon } from '../components/Icons';
 import { getHomeContent } from '../lib/content';
 
-const { solutions, capabilities, projects, deploymentPhotos } = getHomeContent();
+const { solutions, capabilities, projects } = getHomeContent();
 
 export default function Home() {
-  const experiencePhoto = deploymentPhotos[0];
 
   return (
     <main>
@@ -218,27 +217,53 @@ export default function Home() {
           </div>
 
           <div className="experienceV2Grid">
-            <figure className="experienceV2Feature">
-              <div className="experienceV2Image">
-                <img
-                  src={experiencePhoto.src}
-                  alt={experiencePhoto.title}
-                  loading="lazy"
-                  decoding="async"
-                  referrerPolicy="no-referrer"
-                />
-                <div className="experienceImageLabel">
-                  <span>FIELD DEPLOYMENT</span>
-                  <strong>{experiencePhoto.title}</strong>
-                </div>
+            <div className="experienceV2Feature experienceSystemVisual" aria-label="Nutech implementation system diagram">
+              <div className="experienceSystemTop">
+                <span>IMPLEMENTATION SYSTEM VIEW</span>
+                <span>PUBLIC PORTFOLIO</span>
               </div>
-              <figcaption>
-                <span>Real devices. Real sites. Minimal decorative treatment.</span>
+
+              <div className="experienceSystemCanvas">
+                <div className="experienceSystemCore">
+                  <Icon name="integration" size={30}/>
+                  <small>SYSTEM INTEGRATION</small>
+                  <strong>NUTECH</strong>
+                </div>
+
+                <div className="experienceSystemLane laneFare">
+                  <span>01</span>
+                  <Icon name="transit" size={21}/>
+                  <div><small>FARE COLLECTION</small><strong>Gate · Validator · TVM</strong></div>
+                </div>
+                <div className="experienceSystemLane lanePay">
+                  <span>02</span>
+                  <Icon name="payment" size={21}/>
+                  <div><small>PAYMENT</small><strong>EMV · E-Money · Settlement</strong></div>
+                </div>
+                <div className="experienceSystemLane laneSecurity">
+                  <span>03</span>
+                  <Icon name="shield" size={21}/>
+                  <div><small>SECURITY</small><strong>Access · Autogate · CCTV</strong></div>
+                </div>
+                <div className="experienceSystemLane laneOps">
+                  <span>04</span>
+                  <Icon name="map" size={21}/>
+                  <div><small>OPERATIONS</small><strong>Monitoring · GIS · Analytics</strong></div>
+                </div>
+
+                <span className="experienceSystemLine expLineA" aria-hidden="true" />
+                <span className="experienceSystemLine expLineB" aria-hidden="true" />
+                <span className="experienceSystemLine expLineC" aria-hidden="true" />
+                <span className="experienceSystemLine expLineD" aria-hidden="true" />
+              </div>
+
+              <div className="experienceSystemFoot">
+                <span>Resolution-independent technical visual</span>
                 <Link href="/experience">
                   Explore implementation portfolio <Icon name="arrow" size={16}/>
                 </Link>
-              </figcaption>
-            </figure>
+              </div>
+            </div>
 
             <div className="experienceV2List">
               {projects.map(({name,work,sector},i)=>(
