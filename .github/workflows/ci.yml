@@ -13,6 +13,10 @@ jobs:
   build-and-audit:
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    env:
+      NEXT_PUBLIC_BASE_PATH: /nutech-revamp
+      SITE_URL: https://nabillazachra.github.io/nutech-revamp
+      ALLOW_INDEXING: "false"
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -26,7 +30,7 @@ jobs:
         run: npm run validate:content
       - name: Production dependency audit
         run: npm audit --omit=dev --audit-level=high
-      - name: Build
+      - name: Build static export
         run: npm run build
-      - name: Runtime smoke test
+      - name: Static export smoke test
         run: npm run smoke
