@@ -45,3 +45,9 @@ Public content may be referenced for information architecture and migration, but
 - https://www.nutech-integrasi.com/news/ — Railink airport railway e-ticketing scope.
 - https://www.nutech-integrasi.com/product-launching-dan-kunjungan/ — DAMRI On-Bus Validator.
 - https://www.nutech-integrasi.com/2014/08/25/lrt-sumsel/ — LRT Sumsel AFC.
+
+
+## Transitional visual assets
+The current Hi-Fi uses selected first-party deployment images served from `www.nutech-integrasi.com` to establish the photography direction during the revamp. The CSP permits images from that first-party origin only.
+
+Before production cutover, replace these remote URLs with approved master files stored in the final Nutech asset repository/CDN. This avoids coupling the new frontend to legacy WordPress media paths and ensures image ownership, cropping, optimization and lifecycle are controlled by Nutech.
