@@ -1,8 +1,9 @@
 import './globals.css';
 import { getSiteContent } from '../lib/content';
+import { getSiteUrl } from '../lib/site-url';
 
 const allowIndexing = process.env.ALLOW_INDEXING === 'true';
-const siteUrl = process.env.SITE_URL || 'https://www.nutech-integrasi.com';
+const siteUrl = getSiteUrl();
 const { site } = getSiteContent();
 
 export const metadata = {
@@ -14,9 +15,6 @@ export const metadata = {
   description:
     'PT Nutech Integrasi delivers end-to-end ICT system integration across transportation, payments, security, telemetry, financial services, maintenance and repair.',
   applicationName: 'Nutech Integrasi',
-  alternates: {
-    canonical: '/',
-  },
   robots: {
     index: allowIndexing,
     follow: allowIndexing,
@@ -29,13 +27,7 @@ export const metadata = {
     type: 'website',
     locale: 'en_ID',
     siteName: 'Nutech Integrasi',
-    url: '/',
-    title: 'Nutech Integrasi | ICT System Integrator',
-    description:
-      'Integrated ICT solutions for transportation, payment, security, telemetry and enterprise operations.',
-  },
-  twitter: {
-    card: 'summary_large_image',
+    url: siteUrl,
     title: 'Nutech Integrasi | ICT System Integrator',
     description:
       'Integrated ICT solutions for transportation, payment, security, telemetry and enterprise operations.',
@@ -67,6 +59,9 @@ const organizationSchema = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
+      </head>
       <body>
         <a className="skipLink" href="#page-content">Skip to content</a>
         <div id="page-content" tabIndex="-1">{children}</div>
