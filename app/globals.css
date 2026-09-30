@@ -464,3 +464,44 @@ footer .brandLogo{width:174px}
   .blueprintNode{min-width:100px;padding:12px}
   .experienceV2Feature figcaption{align-items:flex-start;flex-direction:column}
 }
+
+
+/* ---------- Hero v3: resolution-independent system graphic ---------- */
+.homeV3HeroVisual{position:relative;min-height:590px;overflow:hidden;background:#171b20;color:#fff;border:1px solid #2c3238}
+.heroV3Grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:34px 34px}
+.heroV3Topline{position:absolute;left:20px;right:20px;top:18px;display:flex;justify-content:space-between;gap:16px;padding-bottom:11px;border-bottom:1px solid rgba(255,255,255,.14);font-size:8px;letter-spacing:.13em;color:#9da4aa}
+.heroV3Core{position:absolute;inset:50% auto auto 50%;transform:translate(-50%,-50%);z-index:3}
+.heroV3CoreRing{width:190px;height:190px;border:1px solid rgba(241,90,41,.5);border-radius:50%;display:grid;place-items:center;box-shadow:0 0 0 22px rgba(241,90,41,.05),0 0 0 46px rgba(241,90,41,.025)}
+.heroV3CoreInner{width:124px;height:124px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--orange);color:#fff;text-align:center}
+.heroV3CoreInner svg{margin-bottom:8px}
+.heroV3CoreInner small{font-size:7px;letter-spacing:.12em;opacity:.82}
+.heroV3CoreInner strong{font-size:18px;letter-spacing:.02em;margin-top:3px}
+.heroV3Node{position:absolute;z-index:4;display:grid;grid-template-columns:24px 26px 1fr;gap:10px;align-items:start;min-width:210px;padding:13px 14px;background:#20262b;border:1px solid #394149}
+.heroV3Node>span{font-size:8px;color:#727b82;padding-top:3px}
+.heroV3Node>svg{color:var(--orange)}
+.heroV3Node small,.heroV3Node strong{display:block}
+.heroV3Node small{font-size:7px;letter-spacing:.12em;color:#8e969d;margin-bottom:4px}
+.heroV3Node strong{font-size:10px;font-weight:650;line-height:1.35}
+.nodeMobility{left:22px;top:98px}
+.nodePaymentV3{right:22px;top:128px}
+.nodeSecurityV3{left:28px;bottom:96px}
+.nodeDataV3{right:24px;bottom:82px}
+.heroV3Connector{position:absolute;height:1px;background:#596269;z-index:1;transform-origin:left center}
+.connectorA{width:30%;left:28%;top:35%;transform:rotate(14deg)}
+.connectorB{width:28%;left:51%;top:38%;transform:rotate(-12deg)}
+.connectorC{width:29%;left:29%;bottom:34%;transform:rotate(-14deg)}
+.connectorD{width:29%;left:51%;bottom:32%;transform:rotate(13deg)}
+.heroV3Footer{position:absolute;left:20px;right:20px;bottom:16px;display:flex;gap:18px;flex-wrap:wrap;padding-top:11px;border-top:1px solid rgba(255,255,255,.14);font-size:8px;letter-spacing:.1em;color:#939ba2;text-transform:uppercase}
+@media(max-width:980px){
+  .homeV3HeroVisual{min-height:520px}
+}
+@media(max-width:680px){
+  .homeV3HeroVisual{min-height:470px}
+  .heroV3CoreRing{width:152px;height:152px}
+  .heroV3CoreInner{width:104px;height:104px}
+  .heroV3Node{min-width:0;width:190px;grid-template-columns:20px 22px 1fr;padding:10px}
+  .nodeMobility{left:12px;top:80px}
+  .nodePaymentV3{right:12px;top:124px}
+  .nodeSecurityV3{left:14px;bottom:86px}
+  .nodeDataV3{right:12px;bottom:64px}
+}
