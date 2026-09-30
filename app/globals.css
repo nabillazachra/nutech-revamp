@@ -293,3 +293,39 @@ footer{margin-top:0}
   .deploymentPhotoGrid{grid-template-columns:1fr}
   .deploymentPhoto:first-child{grid-column:auto}
 }
+
+.experienceCaseActions{display:flex;flex-direction:column;align-items:flex-end;gap:10px;padding-top:3px}
+.experienceCaseActions a{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;white-space:nowrap}
+.experienceCaseActions a:first-child{color:var(--orange)}
+.experienceCaseActions a:last-child{color:#7c8287;font-size:11px}
+.caseDetailHero{padding:154px 0 86px;background:#f7f7f5;border-bottom:1px solid #d9dad6}
+.caseDetailHeroGrid{display:grid;grid-template-columns:1.25fr .75fr;gap:80px;align-items:end}
+.caseBack{display:inline-block;margin-bottom:42px;font-size:11px;font-weight:700;color:#7c8287}
+.caseDetailHero h1{font-size:clamp(48px,6.2vw,84px);line-height:.96;letter-spacing:-.055em;margin:15px 0 0;max-width:900px}
+.caseDetailMeta{border-top:1px solid #d9dad6}
+.caseDetailMeta>div{display:flex;justify-content:space-between;gap:20px;padding:17px 0;border-bottom:1px solid #d9dad6}
+.caseDetailMeta small{font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#989da1}
+.caseDetailMeta strong{font-size:12px;text-align:right}
+.caseDetailGrid{display:grid;grid-template-columns:240px 1fr;gap:70px}
+.caseDetailLabel{font-size:9px;letter-spacing:.14em;color:#9ca0a4;padding-top:7px}
+.caseDetailBody{max-width:820px}
+.caseDetailBody h2{font-size:clamp(36px,4.3vw,58px);line-height:1;letter-spacing:-.045em;margin-bottom:24px}
+.caseDetailBody>p{font-size:17px;line-height:1.75;color:#686f74}
+.scopeList{border-top:1px solid #d9dad6}
+.scopeList>div{display:grid;grid-template-columns:42px 1fr;gap:20px;padding:20px 0;border-bottom:1px solid #d9dad6}
+.scopeList span{font-size:9px;color:#a0a4a7}
+.scopeList p{margin:0;font-size:15px}
+.caseEvidence{background:var(--orange);color:#fff;padding:76px 0}
+.caseEvidenceInner{display:grid;grid-template-columns:1fr auto;gap:70px;align-items:end}
+.caseEvidence h2{font-size:clamp(38px,4.8vw,62px);line-height:.98;letter-spacing:-.048em;margin:14px 0 18px}
+.caseEvidence p{max-width:720px;line-height:1.7;color:rgba(255,255,255,.82);margin:0}
+@media(max-width:900px){
+  .caseDetailHeroGrid,.caseDetailGrid,.caseEvidenceInner{grid-template-columns:1fr}
+  .caseDetailGrid{gap:26px}
+  .experienceCaseActions{grid-column:3}
+}
+@media(max-width:680px){
+  .experienceCaseActions{grid-column:2;align-items:flex-start}
+  .caseDetailHero{padding-top:118px}
+  .caseBack{margin-bottom:28px}
+}
