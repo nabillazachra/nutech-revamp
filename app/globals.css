@@ -505,3 +505,49 @@ footer .brandLogo{width:174px}
   .nodeSecurityV3{left:14px;bottom:86px}
   .nodeDataV3{right:12px;bottom:64px}
 }
+
+
+/* ---------- Resolution-independent implementation visuals ---------- */
+.experienceSystemVisual{background:#171b20;border:1px solid #343a3f;color:#fff;display:flex;flex-direction:column}
+.experienceSystemTop,.experienceSystemFoot{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 16px;font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:#8f979d}
+.experienceSystemTop{border-bottom:1px solid #343a3f}
+.experienceSystemFoot{border-top:1px solid #343a3f}
+.experienceSystemFoot a{display:inline-flex;align-items:center;gap:8px;color:#fff;font-size:11px;font-weight:700;text-transform:none;letter-spacing:0}
+.experienceSystemCanvas{position:relative;min-height:420px;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:32px 32px;overflow:hidden}
+.experienceSystemCore{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:142px;height:142px;border-radius:50%;background:var(--orange);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;z-index:3;box-shadow:0 0 0 18px rgba(241,90,41,.06),0 0 0 38px rgba(241,90,41,.025)}
+.experienceSystemCore small{font-size:7px;letter-spacing:.12em;margin-top:8px;opacity:.8}
+.experienceSystemCore strong{font-size:17px;margin-top:2px}
+.experienceSystemLane{position:absolute;z-index:4;display:grid;grid-template-columns:22px 24px 1fr;gap:9px;align-items:start;min-width:200px;background:#20262b;border:1px solid #394149;padding:12px 13px}
+.experienceSystemLane>span{font-size:8px;color:#707880;padding-top:2px}
+.experienceSystemLane>svg{color:var(--orange)}
+.experienceSystemLane small,.experienceSystemLane strong{display:block}
+.experienceSystemLane small{font-size:7px;letter-spacing:.11em;color:#90989e;margin-bottom:4px}
+.experienceSystemLane strong{font-size:10px;line-height:1.35}
+.laneFare{left:18px;top:42px}
+.lanePay{right:18px;top:76px}
+.laneSecurity{left:24px;bottom:54px}
+.laneOps{right:20px;bottom:38px}
+.experienceSystemLine{position:absolute;height:1px;background:#596269;z-index:1}
+.expLineA{width:30%;left:28%;top:31%;transform:rotate(15deg)}
+.expLineB{width:28%;right:27%;top:35%;transform:rotate(-13deg)}
+.expLineC{width:29%;left:29%;bottom:31%;transform:rotate(-15deg)}
+.expLineD{width:28%;right:27%;bottom:29%;transform:rotate(13deg)}
+
+.implementationSurfaceSection{background:#fff}
+.implementationSurfaceList{border-top:1px solid #d9dad6}
+.implementationSurfaceList article{display:grid;grid-template-columns:42px 48px 1fr;gap:22px;align-items:start;padding:26px 0;border-bottom:1px solid #d9dad6}
+.implementationSurfaceList article>span{font-size:9px;color:#9ba0a4;padding-top:5px}
+.implementationSurfaceList article>svg{color:var(--orange)}
+.implementationSurfaceList h3{font-size:22px;letter-spacing:-.02em;margin:0 0 8px}
+.implementationSurfaceList p{margin:0;max-width:720px;color:#73797f;line-height:1.65;font-size:13px}
+
+@media(max-width:680px){
+  .experienceSystemCanvas{min-height:390px}
+  .experienceSystemCore{width:116px;height:116px}
+  .experienceSystemLane{min-width:0;width:178px;padding:10px;grid-template-columns:18px 21px 1fr}
+  .laneFare{left:10px;top:36px}
+  .lanePay{right:10px;top:90px}
+  .laneSecurity{left:12px;bottom:70px}
+  .laneOps{right:10px;bottom:30px}
+  .implementationSurfaceList article{grid-template-columns:32px 38px 1fr;gap:14px}
+}
