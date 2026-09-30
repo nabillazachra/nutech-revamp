@@ -39,6 +39,7 @@ The prototype uses an approximate orange/graphite palette derived from Nutech's 
 
 - `/` — Hi-Fi editorial homepage
 - `/solutions` — Product & solution overview
+- `/experience` — Sourced public implementation portfolio
 - `/company` — Company positioning, vision, mission and capabilities
 - `/gcg` — Good Corporate Governance information architecture
 - `/career` — Career opportunities
