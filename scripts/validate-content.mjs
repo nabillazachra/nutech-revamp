@@ -47,7 +47,6 @@ const collections = [
   ['home.solutions', content.home?.solutions],
   ['home.capabilities', content.home?.capabilities],
   ['home.projects', content.home?.projects],
-  ['home.deploymentPhotos', content.home?.deploymentPhotos],
   ['solutions.domains', content.solutions?.domains],
   ['solutions.featuredProducts', content.solutions?.featuredProducts],
   ['career.openings', content.career?.openings],
@@ -57,11 +56,6 @@ const collections = [
 
 for (const [label, value] of collections) {
   if (!Array.isArray(value) || value.length === 0) errors.push(`${label} must be a non-empty array`);
-}
-
-for (const [i, item] of (content.home?.deploymentPhotos ?? []).entries()) {
-  safeUrl(item.src, `home.deploymentPhotos[${i}].src`);
-  required(item.title, `home.deploymentPhotos[${i}].title`);
 }
 
 for (const [i, item] of (content.solutions?.featuredProducts ?? []).entries()) {
