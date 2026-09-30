@@ -7,50 +7,79 @@ import { getHomeContent } from '../lib/content';
 const { solutions, capabilities, projects, deploymentPhotos } = getHomeContent();
 
 export default function Home() {
+  const heroPhoto = deploymentPhotos[2] || deploymentPhotos[0];
+  const experiencePhoto = deploymentPhotos[0] || heroPhoto;
+
   return (
     <main>
       <SiteHeader />
 
-      <section className="hero hifiHero" id="top">
-        <div className="heroAccent" aria-hidden="true" />
-        <div className="container hifiHeroGrid">
-          <div className="heroCopy">
-            <div className="heroMeta"><span>ICT SYSTEM INTEGRATOR</span><span>EST. 2006</span></div>
-            <h1>Integrating the systems behind <em>how Indonesia moves.</em></h1>
-            <p>Nutech Integrasi brings together devices, software, payment, network and field operations into one dependable digital ecosystem.</p>
-            <div className="actions">
-              <Link className="btn primary" href="/solutions">Explore solutions <Icon name="arrow" size={18}/></Link>
-              <Link className="textLink" href="/company">About Nutech <Icon name="arrow" size={16}/></Link>
+      <section className="homeV2Hero" id="top">
+        <div className="container homeV2HeroGrid">
+          <div className="homeV2Copy">
+            <div className="homeV2Eyebrow">
+              <span>ICT SYSTEM INTEGRATOR</span>
+              <span>EST. 2006</span>
+            </div>
+
+            <h1>
+              Integrating the systems behind
+              <em> how Indonesia moves.</em>
+            </h1>
+
+            <p>
+              Nutech Integrasi connects devices, software, payment, network and
+              field operations into one dependable digital ecosystem.
+            </p>
+
+            <div className="homeV2Actions">
+              <Link className="btn primary" href="/solutions">
+                Explore solutions <Icon name="arrow" size={18}/>
+              </Link>
+              <Link className="homeV2TextLink" href="/experience">
+                View experience <Icon name="arrow" size={16}/>
+              </Link>
+            </div>
+
+            <div className="homeV2Proof">
+              <div><small>Part of</small><strong>TelkomGroup</strong></div>
+              <div><small>Delivery</small><strong>End-to-End ICT</strong></div>
+              <div><small>Capability</small><strong>Local Engineering</strong></div>
             </div>
           </div>
 
-          <div className="heroPanel">
-            <div className="heroPanelTop">
-              <span>Integration blueprint</span>
-              <strong>01 / 04</strong>
+          <div className="homeV2HeroVisual">
+            <img
+              src={heroPhoto.src}
+              alt={heroPhoto.title}
+              decoding="async"
+              referrerPolicy="no-referrer"
+            />
+            <div className="heroPhotoWash" aria-hidden="true" />
+
+            <div className="heroVisualTop">
+              <span>FIELD SYSTEM / INTEGRATION VIEW</span>
+              <span>01</span>
             </div>
-            <div className="heroPanelBody">
-              <div className="systemStack">
-                <div><small>Field layer</small><b>Gate · Validator · CCTV · Sensor</b></div>
-                <span />
-                <div><small>Platform layer</small><b>AFC · Payment · Monitoring · CMS</b></div>
-                <span />
-                <div className="activeLayer"><small>Integration layer</small><b>Nutech System Integration</b></div>
-                <span />
-                <div><small>Business layer</small><b>Operations · Settlement · Analytics</b></div>
-              </div>
+
+            <div className="heroAnnotation heroAnnotationA">
+              <span>01</span>
+              <div><small>FIELD LAYER</small><strong>Gate · Validator · Device</strong></div>
             </div>
-            <div className="heroPanelFoot">
-              <span>Hardware</span><span>Software</span><span>Integration</span><span>Maintenance</span>
+            <div className="heroAnnotation heroAnnotationB">
+              <span>02</span>
+              <div><small>PLATFORM LAYER</small><strong>AFC · Payment · Monitoring</strong></div>
+            </div>
+            <div className="heroAnnotation heroAnnotationC">
+              <span>03</span>
+              <div><small>INTEGRATION</small><strong>Nutech System Integration</strong></div>
+            </div>
+
+            <div className="heroVisualCaption">
+              <small>{heroPhoto.label}</small>
+              <strong>{heroPhoto.title}</strong>
             </div>
           </div>
-        </div>
-
-        <div className="container trustStrip">
-          <div><span>Part of</span><strong>TelkomGroup</strong></div>
-          <div><span>Delivery</span><strong>End-to-End ICT</strong></div>
-          <div><span>Capability</span><strong>Local Engineering</strong></div>
-          <div><span>Coverage</span><strong>Indonesia</strong></div>
         </div>
       </section>
 
@@ -61,26 +90,79 @@ export default function Home() {
             <span className="kicker">POSITIONING</span>
             <h2>Not another device vendor. An integration partner for operational systems.</h2>
           </div>
-          <p>Nutech's value sits between technology components and day-to-day operations: making multiple products, platforms and stakeholders work together as one service.</p>
+          <p>
+            Nutech's value sits between technology components and day-to-day
+            operations: making products, platforms and stakeholders work
+            together as one service.
+          </p>
         </div>
       </section>
 
-      <section className="section solutionShowcase" id="solutions">
+      <section className="section solutionV2" id="solutions">
         <div className="container">
-          <div className="showcaseHead">
-            <div><span className="sectionIndex">02</span><span className="kicker">PRODUCT & SOLUTION</span></div>
+          <div className="solutionV2Head">
+            <div>
+              <span className="sectionIndex">02</span>
+              <span className="kicker">PRODUCT & SOLUTION</span>
+            </div>
             <h2>Four domains.<br/>One integration mindset.</h2>
-            <p>Solution categories are preserved from Nutech's public portfolio, but reorganized for faster executive and technical scanning.</p>
           </div>
 
-          <div className="solutionEditorialGrid">
-            {solutions.map(({icon,title,body},i)=>(
-              <Link className="solutionEditorialCard" href="/solutions" key={title}>
-                <div className="solutionCardMeta"><span>0{i+1}</span><Icon name={icon} size={25}/></div>
-                <div><h3>{title}</h3><p>{body}</p></div>
-                <div className="solutionArrow"><Icon name="arrow" size={18}/></div>
-              </Link>
-            ))}
+          <div className="solutionV2Layout">
+            <div className="solutionV2List">
+              {solutions.map(({icon,title,body},i)=>(
+                <Link className="solutionV2Row" href="/solutions" key={title}>
+                  <span className="solutionV2Number">0{i+1}</span>
+                  <span className="solutionV2Icon"><Icon name={icon} size={24}/></span>
+                  <span className="solutionV2Copy">
+                    <strong>{title}</strong>
+                    <small>{body}</small>
+                  </span>
+                  <span className="solutionV2Arrow"><Icon name="arrow" size={17}/></span>
+                </Link>
+              ))}
+            </div>
+
+            <div className="solutionV2Visual">
+              <div className="solutionBlueprintHeader">
+                <span>INTEGRATION MAP</span>
+                <span>END-TO-END</span>
+              </div>
+
+              <div className="solutionBlueprint">
+                <div className="blueprintNode nodeField">
+                  <small>FIELD</small>
+                  <strong>Device</strong>
+                </div>
+                <div className="blueprintNode nodePayment">
+                  <small>TRANSACTION</small>
+                  <strong>Payment</strong>
+                </div>
+                <div className="blueprintNode nodeCore">
+                  <small>INTEGRATION</small>
+                  <strong>NUTECH</strong>
+                </div>
+                <div className="blueprintNode nodeOps">
+                  <small>OPERATIONS</small>
+                  <strong>Monitoring</strong>
+                </div>
+                <div className="blueprintNode nodeData">
+                  <small>BUSINESS</small>
+                  <strong>Data</strong>
+                </div>
+                <span className="blueprintLine lineA" />
+                <span className="blueprintLine lineB" />
+                <span className="blueprintLine lineC" />
+                <span className="blueprintLine lineD" />
+              </div>
+
+              <div className="solutionBlueprintFooter">
+                <span>Hardware</span>
+                <span>Software</span>
+                <span>Integration</span>
+                <span>Lifecycle</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -88,9 +170,13 @@ export default function Home() {
       <section className="section capabilityEditorial" id="capabilities">
         <div className="container">
           <div className="capEditorialTop">
-            <div><span className="sectionIndex">03</span><span className="kicker">DELIVERY CAPABILITY</span></div>
+            <div>
+              <span className="sectionIndex">03</span>
+              <span className="kicker">DELIVERY CAPABILITY</span>
+            </div>
             <h2>From design to operation.</h2>
           </div>
+
           <div className="capEditorialList">
             {capabilities.map(({icon,title,body},i)=>(
               <article key={title}>
@@ -104,49 +190,52 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section experienceEditorial" id="experience">
+      <section className="section experienceV2" id="experience">
         <div className="container">
-          <div className="experienceLead">
-            <div><span className="sectionIndex">04</span><span className="kicker light">SELECTED EXPERIENCE</span></div>
+          <div className="experienceV2Head">
+            <div>
+              <span className="sectionIndex">04</span>
+              <span className="kicker light">SELECTED EXPERIENCE</span>
+            </div>
             <h2>Systems built for real public operations.</h2>
-            <p>Selected implementation areas from Nutech's public portfolio across mobility, payments and security.</p>
           </div>
-          <div className="experienceRail">
-            {projects.map(({name,work,sector},i)=>(
-              <article key={name}>
-                <div className="experienceNo">{String(i+1).padStart(2,'0')}</div>
-                <div className="experienceSector">{sector}</div>
-                <h3>{name}</h3>
-                <p>{work}</p>
-              </article>
-            ))}
-          </div>
-          <div className="experienceMore">
-            <Link className="textLink lightTextLink" href="/experience">Explore selected experience <Icon name="arrow" size={16}/></Link>
-          </div>
-        </div>
-      </section>
 
-      <section className="section deploymentStrip">
-        <div className="container">
-          <div className="deploymentStripHead">
-            <div><span className="sectionIndex">05</span><span className="kicker">FIELD DEPLOYMENT</span></div>
-            <h2>Technology shown in the context where it operates.</h2>
-            <p>First-party visuals from Nutech's current website establish the production photography direction: real devices, real sites, minimal decorative treatment.</p>
-          </div>
-          <div className="deploymentPhotoGrid">
-            {deploymentPhotos.map(({src,title,label},i)=>(
-              <figure key={title} className="deploymentPhoto">
-                <div>
-                  <img src={src} alt={title} loading="lazy" decoding="async" referrerPolicy="no-referrer"/>
-                  <span>{String(i+1).padStart(2,'0')}</span>
+          <div className="experienceV2Grid">
+            <figure className="experienceV2Feature">
+              <div className="experienceV2Image">
+                <img
+                  src={experiencePhoto.src}
+                  alt={experiencePhoto.title}
+                  loading="lazy"
+                  decoding="async"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="experienceImageLabel">
+                  <span>FIELD DEPLOYMENT</span>
+                  <strong>{experiencePhoto.title}</strong>
                 </div>
-                <figcaption><small>{label}</small><h3>{title}</h3></figcaption>
-              </figure>
-            ))}
-          </div>
-          <div className="deploymentPhotoLink">
-            <Link className="textLink" href="/experience">View implementation portfolio <Icon name="arrow" size={16}/></Link>
+              </div>
+              <figcaption>
+                <span>Real devices. Real sites. Minimal decorative treatment.</span>
+                <Link href="/experience">
+                  Explore implementation portfolio <Icon name="arrow" size={16}/>
+                </Link>
+              </figcaption>
+            </figure>
+
+            <div className="experienceV2List">
+              {projects.map(({name,work,sector},i)=>(
+                <Link href="/experience" className="experienceV2Item" key={name}>
+                  <span className="experienceV2No">{String(i+1).padStart(2,'0')}</span>
+                  <div>
+                    <small>{sector}</small>
+                    <h3>{name}</h3>
+                    <p>{work}</p>
+                  </div>
+                  <Icon name="arrow" size={17}/>
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -154,7 +243,7 @@ export default function Home() {
       <section className="section insightBand">
         <div className="container insightGrid">
           <div>
-            <span className="sectionIndex">06</span>
+            <span className="sectionIndex">05</span>
             <span className="kicker">WHY IT MATTERS</span>
             <h2>One operational outcome requires many technologies to behave like one system.</h2>
           </div>
@@ -173,8 +262,13 @@ export default function Home() {
             <h2>Have a system that needs to connect, scale or operate more reliably?</h2>
           </div>
           <div>
-            <p>Bring the operational problem. Nutech can map the hardware, software, integration and lifecycle scope around it.</p>
-            <Link className="btn lightButton" href="/contact">Talk to Nutech <Icon name="arrow" size={18}/></Link>
+            <p>
+              Bring the operational problem. Nutech can map the hardware,
+              software, integration and lifecycle scope around it.
+            </p>
+            <Link className="btn lightButton" href="/contact">
+              Talk to Nutech <Icon name="arrow" size={18}/>
+            </Link>
           </div>
         </div>
       </section>
