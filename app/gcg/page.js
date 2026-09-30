@@ -49,7 +49,7 @@ export default function GcgPage(){
       <div className="container editorialBand">
         <div><span className="kicker">ANNUAL REPORT</span><h2>Corporate reporting, year by year.</h2></div>
         <div className="yearPills">
-          {['2024','2023','2022','2021'].map(y=><a key={y} href="https://www.nutech-integrasi.com/gcg/" target="_blank" rel="noopener noreferrer">{y}</a>)}
+          {['2025','2024','2023','2022','2021'].map(y=><a key={y} href="https://www.nutech-integrasi.com/gcg/" target="_blank" rel="noopener noreferrer">{y}</a>)}
         </div>
       </div>
     </section>
