@@ -139,6 +139,9 @@ export default function Home() {
               </article>
             ))}
           </div>
+          <div className="experienceMore">
+            <Link className="textLink lightTextLink" href="/experience">Explore selected experience <Icon name="arrow" size={16}/></Link>
+          </div>
         </div>
       </section>
 
